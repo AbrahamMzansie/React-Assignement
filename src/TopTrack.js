@@ -29,11 +29,16 @@ const TopTrack = ({ id }) => {
   }, []);
   return (
     <>
-     <h4 class = "top-track-heading">Top Tracks</h4>
+      {data && data.data && data.data.length > 0 ? (
+        <h4 class="top-track-heading">Top Tracks</h4>
+      ) : (
+        <h4 class="top-track-heading"> No Top Tracks Found</h4>
+      )}
+
       {data &&
         data.data &&
         data.data.map((item, index) => (
-          <div  id = {item.id} className="top-track">
+          <div id={item.id} className="top-track">
             <p className="item-number">{(index = index + 1)}.</p>
             <p>{item.title}</p>
             <p className="duration">{(item.duration / 60).toFixed(2)}</p>

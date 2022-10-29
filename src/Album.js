@@ -28,9 +28,10 @@ const Album = ({ id }) => {
   }, []);
   return (
     <>
+    
       {data &&
         data.data &&
-        data.data.map((item, index) => (
+        data.data.map((item) => (
           <div  id = {item.id} className="album">
             <img src={item.cover} alt="Avatar" />
             <p className="album-title">{item.title}</p>
