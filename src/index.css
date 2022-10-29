@@ -119,3 +119,39 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.btn {
+  background-color: #f1356d; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor : pointer;
+}
+a{
+  text-decoration: none;
+  color : black
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+
+  }
+  .artist-details-header{
+    flex-direction : column;
+  }
+  .top-tracks{
+    width : 100%;
+    border : none;
+  }
+  .top-track {    
+    flex-wrap: wrap;
+}
+  .album{
+    margin : 10px;
+    width : auto;
+  }
+}

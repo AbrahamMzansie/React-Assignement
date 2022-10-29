@@ -8,9 +8,13 @@ const Cards = () => {
   const searchHandler = async (e) => {
     e.preventDefault();
 
-    const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=eminem`;
+    const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${search}`;
     e.preventDefault();
-    fetch(url)
+    fetch(url ,{
+        method: "GET",
+        headers: { "Content-Type": "application/json" , "mode" : "cors" ,"credentials" : "include"},
+       
+      })
       .then((res) => {
         console.log(res);
         if (!res.ok) {
@@ -38,21 +42,18 @@ const Cards = () => {
           />
         </div>
       </div>
-      <div className="card">
-      <Link to={`/artist/1`}>
-               <h1>Go to There</h1>
-              </Link>
+      <div className="card">      
         {data &&
           data.data &&
-          data.data.map((blog) => (
+          data.data.map((artist) => (
             <div className="item">
-              <Link to={`/artist/${blog.id}`}>
-                <img src={blog.artist.picture} alt="Avatar" />
+              <Link to={`/artist/${artist.id}`}>
+                <img src={artist.artist.picture} alt="Avatar" />
                 <div className="container">
                   <h4>
-                    <b>{blog.artist.name}</b>
+                    <b>{artist.artist.name}</b>
                   </h4>
-                  <p>{blog.rank} fans</p>
+                  <p>{artist.rank} fans</p>
                 </div>
               </Link>
             </div>
