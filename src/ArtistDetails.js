@@ -10,7 +10,7 @@ const ArtistDetails = () => {
   const history = useHistory();
 
   useEffect(() => {
-    const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}`;
+    const url = `/artist/${id}`;
 
     fetch(url, {
       method: "GET",

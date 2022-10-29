@@ -34,7 +34,7 @@ const Cards = () => {
   };
 
   useEffect(() => {
-    const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q=${search}`;
+    const url = `/search/artist?q=${search}`;
     fetch(url, {
       method: "GET",
       headers: {

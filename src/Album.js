@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const Album = ({ id }) => {
   const [data, setData] = useState(null);
   useEffect(() => {
-    const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}/albums`;
+    const url = `/artist/${id}/albums`;
     fetch(url, {
       method: "GET",
       headers: {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const TopTrack = ({ id }) => {
   const [data, setData] = useState(null);
   useEffect(() => {
-    const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}/top`;
+    const url = `/artist/${id}/top`;
 
     fetch(url, {
       method: "GET",
