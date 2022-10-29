@@ -66,6 +66,8 @@
 }
 .item {
   padding: 20px 20px;
+  width : 150px;
+ 
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -114,10 +116,14 @@
   font-weight: bold;
 }
 .album-container {
-  display: flex;
-  align-items: center;
+  display: flex;  
   justify-content: space-between;
   flex-wrap: wrap;
+}
+.album {
+  width : 100px;
+  
+  margin-right : 20px;
 }
 .btn {
   background-color: #f1356d; /* Green */
@@ -133,6 +139,9 @@
 a{
   text-decoration: none;
   color : black
+}
+.album-title{
+  font-weight : bold;
 }
 
 @media only screen and (max-width: 600px) {

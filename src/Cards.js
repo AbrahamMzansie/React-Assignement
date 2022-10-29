@@ -8,13 +8,16 @@ const Cards = () => {
   const searchHandler = async (e) => {
     e.preventDefault();
 
-    const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${search}`;
+    const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q=${search}`;
     e.preventDefault();
-    fetch(url ,{
-        method: "GET",
-        headers: { "Content-Type": "application/json" , "mode" : "cors" ,"credentials" : "include"},
-       
-      })
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        mode: "cors",
+        credentials: "include",
+      },
+    })
       .then((res) => {
         console.log(res);
         if (!res.ok) {
@@ -23,7 +26,7 @@ const Cards = () => {
         return res.json();
       })
       .then((result) => {
-        setData(result);
+        setData(result);      
       })
       .catch((error) => {
         console.log(error);
@@ -42,18 +45,18 @@ const Cards = () => {
           />
         </div>
       </div>
-      <div className="card">      
+      <div className="card">
         {data &&
           data.data &&
           data.data.map((artist) => (
             <div className="item">
               <Link to={`/artist/${artist.id}`}>
-                <img src={artist.artist.picture} alt="Avatar" />
+                <img src={artist.picture} alt="Avatar" />
                 <div className="container">
-                  <h4>
-                    <b>{artist.artist.name}</b>
-                  </h4>
-                  <p>{artist.rank} fans</p>
+                  {/* <h4>
+                    <b>{artist.name}</b>
+                  </h4> */}
+                  <p>{artist.nb_fan} fans</p>
                 </div>
               </Link>
             </div>
