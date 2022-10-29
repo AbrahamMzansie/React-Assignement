@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Cards = () => {
@@ -32,6 +32,31 @@ const Cards = () => {
         console.log(error);
       });
   };
+
+  useEffect(() => {
+    const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q=${search}`;
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        mode: "cors",
+        credentials: "include",
+      },
+    })
+      .then((res) => {
+        console.log(res);
+        if (!res.ok) {
+          throw Error("something went wrong , try again later", res);
+        }
+        return res.json();
+      })
+      .then((result) => {
+        setData(result);        
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [search]);
   return (
     <div className="Cards">
       <div className="search">
