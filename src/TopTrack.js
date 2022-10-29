@@ -29,6 +29,7 @@ const TopTrack = ({ id }) => {
   }, []);
   return (
     <>
+     <h4 class = "top-track-heading">Top Tracks</h4>
       {data &&
         data.data &&
         data.data.map((item, index) => (

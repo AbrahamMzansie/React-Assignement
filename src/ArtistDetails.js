@@ -5,13 +5,10 @@ import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const ArtistDetails = () => {
-  const { id , image_url } = useParams();  
+  const { id , name , fans } = useParams();  
   const [data, setData] = useState(null);
   const history = useHistory();
-  const goToHome = (e) => {
-    e.preventDefault();
-    history.push("/");
-  };
+  
   useEffect(() => {
     const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}`;
 
@@ -39,15 +36,15 @@ const ArtistDetails = () => {
       });
   }, [id]);
   return (
-    <div className="artist-details-info">
-      {/* <button className="btn" onClick={goToHome}>
-        Go Back
-      </button> */}
+    <div className="artist-details-info">    
       <div className="artist-details-header">
+        <div className="artist-details-wrapper" >
         <img src={`https://api.deezer.com/artist/${id}/image`} alt="Avatar" />
+        <p className="artist-details-name">{name}</p>
+        <p className="artist-details-name-fan">{fans}<span>{" "}fans</span></p>
+        </div>
         <div className="top-tracks">
-          <h4>Top Tracks</h4>
-          <TopTrack id = {id}/>          
+                   <TopTrack id = {id}/>          
         </div>
       </div>
       <div className="album-container">

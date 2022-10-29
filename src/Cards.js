@@ -50,7 +50,7 @@ const Cards = () => {
           data.data &&
           data.data.map((artist , index) => (
             <div id = {index} className="item">
-              <Link to={`/artist/${artist.id}`}>
+              <Link to={`/artist/${artist.id}/${artist.name}/${artist.nb_fan}`}>
                 <img src={artist.picture} alt="Avatar" />
                 <div className="container">                  
                   <p>{artist.nb_fan} fans</p>
