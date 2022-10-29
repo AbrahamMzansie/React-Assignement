@@ -24,9 +24,10 @@
 .header ul li {
   list-style-type: none;
 }
-.header h1 {
+.header h1 , a {
   text-align: left;
   width: 60%;
+  color: #f1356d;
 }
 .search {
   display: flex;

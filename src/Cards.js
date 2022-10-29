@@ -25,7 +25,7 @@ const Cards = () => {
         }
         return res.json();
       })
-      .then((result) => {
+      .then((result) => {      
         setData(result);      
       })
       .catch((error) => {
@@ -48,14 +48,11 @@ const Cards = () => {
       <div className="card">
         {data &&
           data.data &&
-          data.data.map((artist) => (
-            <div className="item">
+          data.data.map((artist , index) => (
+            <div id = {index} className="item">
               <Link to={`/artist/${artist.id}`}>
                 <img src={artist.picture} alt="Avatar" />
-                <div className="container">
-                  {/* <h4>
-                    <b>{artist.name}</b>
-                  </h4> */}
+                <div className="container">                  
                   <p>{artist.nb_fan} fans</p>
                 </div>
               </Link>

@@ -32,7 +32,7 @@ const TopTrack = ({ id }) => {
       {data &&
         data.data &&
         data.data.map((item, index) => (
-          <div className="top-track">
+          <div  id = {item.id} className="top-track">
             <p className="item-number">{(index = index + 1)}.</p>
             <p>{item.title}</p>
             <p className="duration">{(item.duration / 60).toFixed(2)}</p>

@@ -40,9 +40,9 @@ const ArtistDetails = () => {
   }, [id]);
   return (
     <div className="artist-details-info">
-      <button className="btn" onClick={goToHome}>
+      {/* <button className="btn" onClick={goToHome}>
         Go Back
-      </button>
+      </button> */}
       <div className="artist-details-header">
         <img src={`https://api.deezer.com/artist/${id}/image`} alt="Avatar" />
         <div className="top-tracks">
