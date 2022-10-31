@@ -60,7 +60,7 @@ const Cards = () => {
   return (
     <div className="Cards">
       <div className="search">
-        <h1>O</h1>
+        <h1><span className="dot"></span></h1>
         <div className="search-details">
           <button onClick={searchHandler}>search</button>
           <input
